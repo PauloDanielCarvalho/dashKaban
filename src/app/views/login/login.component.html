@@ -1,0 +1,33 @@
+<div fxLayoutAlign="center center" fxFill>
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Login</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <mat-form-field>
+
+                <input matInput placeholder="Email" formControlName="email" required>
+                <mat-error *ngIf="!loginForm.controls['email'].valid">
+                    Email is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>
+                        {{hide ? 'visibility_off' : 'visibility'}}
+                    </mat-icon>
+                </button>
+                <mat-error *ngIf="!loginForm.controls['password'].valid">
+                    Password is required
+                </mat-error>
+
+
+            </mat-form-field>
+            <span class="create-account-link" routerLink="signup">Create account!</span>
+            <button mat-raised-button type="submit" color="primary">Login</button>
+        </form>
+
+    </mat-card>
+</div>

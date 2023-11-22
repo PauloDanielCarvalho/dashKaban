@@ -1,0 +1,19 @@
+<form class="form" fxLayoutAlign="center center"  [formGroup]="creteTask" (ngSubmit)="onCreateTask()"> 
+    <mat-card fxFlex="80">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>name</mat-label>
+            <input matInput placeholder="Ex. Paulo" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>description</mat-label>
+            <input matInput placeholder="description" formControlName="description"  required>
+            
+        </mat-form-field>
+
+        
+        <button mat-raised-button type="submit">Create</button>
+    </mat-card>
+
+</form>

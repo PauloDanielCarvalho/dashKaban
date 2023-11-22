@@ -1,0 +1,40 @@
+<div cdkDropListGroup  style="padding-top: 50px;" fxLayoutAlign="space-around start" >
+    <div class="container">
+        
+        <div fxLayout="row" fxLayoutAlign="space-between start">
+            <h2>To do</h2>
+            <button mat-mini-fab (click)="openDialog()">
+              <mat-icon>plus_one</mat-icon>
+            </button>
+          </div>
+        <div cdkDropList [cdkDropListData]="todo" class="list" (cdkDropListDropped)="drop($event)">
+
+            <div *ngFor="let item of todo" class="box" cdkDrag>
+                {{item.name}}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>in Progress</h2>
+        <div cdkDropList [cdkDropListData]="inProgress" class="list" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of inProgress" class="box" cdkDrag>
+                {{item.name}}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h2>Done</h2>
+
+        <div cdkDropList [cdkDropListData]="done" class="list" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of done" class="box" cdkDrag>
+                {{item.name}}
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

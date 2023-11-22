@@ -1,0 +1,24 @@
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 43px;
+    padding-top: 20px;
+
+}
+
+.profile-image {
+    height: 47px;
+    padding-top: 7px;
+    
+}
+
+.search-field {
+    width: 700px;
+}
+

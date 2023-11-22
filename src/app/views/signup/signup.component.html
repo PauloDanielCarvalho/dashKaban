@@ -1,0 +1,36 @@
+<form class="form" fxLayoutAlign="center center" fxFill [formGroup]="createUser" (ngSubmit)="onCreateUser()"> 
+    <mat-card fxFlex="25">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>name</mat-label>
+            <input matInput placeholder="Ex. Paulo" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="!createUser.controls['email'].valid">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>
+                    {{hide ? 'visibility_off' : 'visibility'}}
+                </mat-icon>
+            </button>
+            <mat-error *ngIf="!createUser.controls['password'].valid">
+                Password is required
+            </mat-error>
+
+
+        </mat-form-field>
+        <button mat-raised-button type="submit">Create</button>
+    </mat-card>
+
+
+</form>

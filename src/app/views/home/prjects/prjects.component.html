@@ -1,0 +1,7 @@
+<button mat-raised-button (click)="openDialog()">create projects</button>
+<div *ngIf="projects" fxLayoutAlign="space-evenly center" style="cursor: pointer;">
+    <div *ngFor="let project of projects" class="card" routerLink="dashboard/{{project.id}}">
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.description }}</p>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<section class="section">
+    <h5 class="title" routerLink="/home" style="cursor: pointer;"><strong>Kaban</strong></h5>
+    
+    <mat-form-field class="search-field">
+        <input matInput class="input" placeholder="Pesquisar" [(ngModel)]="searchValue" (keyup.enter)="onSearch('enter')">
+        <button mat-button matSuffix class="search-button" (click)="onSearch('click')">
+          <mat-icon class="search-icon">search</mat-icon>
+        </button>
+      </mat-form-field>
+      
+    <img class="profile-image" src="../.././../../assets/images/profile.png">
+</section>
